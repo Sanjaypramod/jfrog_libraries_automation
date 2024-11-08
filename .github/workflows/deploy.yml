@@ -17,11 +17,11 @@ jobs:
 
      - name: Create .pypirc file
        run: |
-          cat > ~/.pypirc <<EOF
+          tee ~/.pypirc > /dev/null <<EOF
           [distutils]
           index-servers =
             artifactory
- 
+
           [artifactory]
           repository = https://${{ secrets.ARTIFACTORY_URL }}/artifactory/api/pypi/<REPOSITORY>
           username = ${{ secrets.ARTIFACTORY_USERNAME }}
@@ -36,7 +36,4 @@ jobs:
          source venv/bin/activate
          pip3 install setuptools wheel twine
          python3 setup.py sdist bdist_wheel
-         
-     - name: Publish to JFrog Artifactory
-       run: |
          twine upload --repository local dist/*
