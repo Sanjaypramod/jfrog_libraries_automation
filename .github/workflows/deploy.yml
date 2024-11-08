@@ -2,7 +2,7 @@ name: Publish Python Package to JFrog Artifactory
 on:
  push:
    branches:
-     - main  # Or specify the branch you want to trigger the workflow
+     - master  # Or specify the branch you want to trigger the workflow
 jobs:
  publish:
    runs-on: ubuntu-latest
