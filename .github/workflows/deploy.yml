@@ -23,7 +23,7 @@ jobs:
             local
 
           [local]
-          repository = https://${{ secrets.ARTIFACTORY_URL }}/artifactory/api/pypi/<REPOSITORY>
+          repository = https://${{ secrets.ARTIFACTORY_URL }}/artifactory/api/pypi/poc-pypi
           username = ${{ secrets.ARTIFACTORY_USERNAME }}
           password = ${{ secrets.ARTIFACTORY_PASSWORD }}
           EOF
