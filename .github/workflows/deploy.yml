@@ -30,14 +30,11 @@ jobs:
 
      - name: Install build tools
        run: |
+         python3 -m pip install --upgrade pip
          pip3 install virtualenv
          python3 -m venv venv
          source venv/bin/activate
-         python3 -m pip install --upgrade pip
-         pip install setuptools wheel twine
-         
-     - name: Build the package
-       run: |
+         pip3 install setuptools wheel twine
          python3 setup.py sdist bdist_wheel
          
      - name: Publish to JFrog Artifactory
