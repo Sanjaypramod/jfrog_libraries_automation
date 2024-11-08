@@ -20,9 +20,9 @@ jobs:
           tee ~/.pypirc > /dev/null <<EOF
           [distutils]
           index-servers =
-            artifactory
+            local
 
-          [artifactory]
+          [local]
           repository = https://${{ secrets.ARTIFACTORY_URL }}/artifactory/api/pypi/<REPOSITORY>
           username = ${{ secrets.ARTIFACTORY_USERNAME }}
           password = ${{ secrets.ARTIFACTORY_PASSWORD }}
